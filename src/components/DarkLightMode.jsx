@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import nightMode from "../assets/icons/nightMode.png";
+import lightMode from "../assets/icons/lightMode.png"
 import React from 'react'
 
 export const DarkLightMode = (props) => {
@@ -7,10 +8,10 @@ export const DarkLightMode = (props) => {
   return (
     <div className="DarkLightMode">
         <button type="button" className="dark-toggle" onClick={()=>props.onClick()}>
-            {props.darkMode
-                ? <img src="../assets/icons/night-mode.png"/>
-                : <img src="../assets/icons/light-mode.png"></img>
-            }
+        {props.darkMode 
+          ? <img className="iconDarkLightMode" src={lightMode}></img> 
+          : <img className="iconDarkLightMode" src={nightMode} />
+        }
         </button>
     </div>
   )

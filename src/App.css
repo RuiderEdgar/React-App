@@ -1,3 +1,10 @@
+:root{
+  --gold: #D3BC8E;
+  --brown: #A68074;
+  --veish: #F2EEE6;
+  --borderWhite: #EBEBEB;
+  --borderBrown: #CCBAAD;
+}
 *{
   padding: 0;
   margin: 0;
@@ -6,14 +13,21 @@
 .html{
   font-size: 62.5%;
 }
-.Header{
+/*---------header------*/
+header{
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
+  background-color: var(--gold);
 }
+.Header{
+  align-items: center;
+  height: 50px;
+  padding-left: 8rem;
+}
+
 .DarkLightMode{
-  display: flex;
-  justify-content: center;
+  padding-left: 8rem;
 }
 .darkMode{
   background-color: rgb(23, 23, 23);
@@ -24,20 +38,22 @@
   color: black;
 }
 .dark-toggle{
-  background-color: blue;
-  width: 50px;
-  height: 50px;
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-color: var(--brown);
+  background-color: white;
+  text-align: center;
 }
-
 .iconDarkLightMode{
-  
+  width: 28px;
 }
-.App {
-  
+/*division*/
+hr{
+  border: 3px solid var(--borderWhite);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-

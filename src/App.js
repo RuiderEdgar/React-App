@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import {Characters} from './components/Characters';
 import {DarkLightMode} from './components/DarkLightMode';
 import { useState } from "react";
+import Genshin from './components/Genshin';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -10,13 +11,18 @@ function App() {
 
   return (
     <div id='App' className={"App " + bg}>
-      <Header/>
-      <DarkLightMode
-        darkMode={darkMode}
-        onClick={() => setDarkMode(!darkMode)}>
-      </DarkLightMode>
-      <h1>Hola Mundo!</h1>
-      <Characters/>
+      <header>
+        <Header/>
+        <DarkLightMode
+          darkMode={darkMode}
+          onClick={() => setDarkMode(!darkMode)}>
+        </DarkLightMode>
+      </header>
+      <hr />
+      <main>
+        <Genshin/>
+      </main>
+      
       
     </div>
   );
