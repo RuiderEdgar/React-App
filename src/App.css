@@ -17,6 +17,20 @@
 }
 .darkMode{
   background-color: rgb(23, 23, 23);
+  color: white;
+}
+.lightMode{
+  background-color: white;
+  color: black;
+}
+.dark-toggle{
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+}
+
+.iconDarkLightMode{
+  
 }
 .App {
   

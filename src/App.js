@@ -6,14 +6,15 @@ import { useState } from "react";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-    const handleClick = () => {
-      setDarkMode(!darkMode);
-    }
+  let bg = darkMode ? "darkMode" : "lightMode";
 
   return (
-    <div id='App' className="App">
+    <div id='App' className={"App " + bg}>
       <Header/>
-      <DarkLightMode/>
+      <DarkLightMode
+        darkMode={darkMode}
+        onClick={() => setDarkMode(!darkMode)}>
+      </DarkLightMode>
       <h1>Hola Mundo!</h1>
       <Characters/>
       
