@@ -31,7 +31,6 @@ header{
 }
 .darkMode{
   background-color: rgb(23, 23, 23);
-  color: white;
 }
 .lightMode{
   background-color: white;
@@ -56,4 +55,77 @@ header{
 /*division*/
 hr{
   border: 3px solid var(--borderWhite);
+}
+/*------Body-----*/
+main{
+  margin-top: 3rem;
+  
+}
+/*------Cards-----*/
+.Genshin{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 35rem);
+  gap: 2rem 5rem;
+  place-content: center;
+  height: fit-content;
+
+}
+.cards-container{
+  display: flex;
+  background-color: var(--veish);
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border: 3px solid var(--borderBrown);
+  height: fit-content;
+}
+
+.imgCharacter{
+  height: 25rem;
+  width: 15rem;
+  border-radius: 30px 0 0 30px;
+  -webkit-border-radius: 30px 0 0 30px;
+  -moz-border-radius: 30px 0 0 30px;
+  -ms-border-radius: 30px 0 0 30px;
+  -o-border-radius: 30px 0 0 30px;
+}
+
+.txt-container{
+  width: 20rem;
+}
+.txt-container h2{
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 1.6rem;
+  background-color: var(--brown);
+  border-radius: 0 27px 0 0;
+  -webkit-border-radius: 0 27px 0 0;
+  -moz-border-radius: 0 27px 0 0;
+  -ms-border-radius: 0 27px 0 0;
+  -o-border-radius: 0 27px 0 0;
+  color: white;
+}
+.txt-container p{
+  padding: 1rem 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.bold{
+  font-weight: bold;
+}
+.txt-container p:last-child{
+  text-align: justify;
+  padding-right: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 7.5rem;
+}
+.txt-container p:last-child span:last-child{
+  font-size: 1rem;
+  font-weight: 500;
+  height: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
