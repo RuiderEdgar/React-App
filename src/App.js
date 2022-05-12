@@ -22,8 +22,6 @@ function App() {
       <main>
         <Genshin/>
       </main>
-      
-      
     </div>
   );
 }
