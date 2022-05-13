@@ -8,7 +8,7 @@ import ThemeContext from './context/ThemeContext';
 
 
 function App() {
-  const [theme, updateTheme] = useState("darkMode");
+  const [theme, updateTheme] = useState("lightMode");
   
 
   /*---Ya no se usa esta parte del codigo--- */

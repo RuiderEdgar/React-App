@@ -1,7 +1,24 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useReducer} from 'react'
+
+const initialState = {
+  favorites: []
+}
+
+const favoriteReducer = (state, action) => {
+  switch(action.type){
+    case 'ADD_TO_FAVORITE':
+      return{
+        ...state,
+        favorites: [...state.favorites, action.payload]
+      };
+    default: 
+      return state;
+  }
+}
 
 export const Genshin = () => {
     const [personajes, setPersonajes] = useState([]);
+    const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
 
     useEffect(() => {
         fetch('https://genshin-app-api.herokuapp.com/api/characters?/')
@@ -9,10 +26,21 @@ export const Genshin = () => {
         .then(data => setPersonajes(data.payload.characters));
     }, []);
 
+    const handleClick = (favorite) => {
+      dispatch({ type: 'ADD_TO_FAVORITE', payload: favorite })
+    }
+
   return (
     <div className="Genshin">
+
+        {favorites.favorites.map(favorite => (
+          <li key={favorite.name}>
+            {favorite.name}
+          </li>
+        ))}
+
         {personajes.map(characters => (
-          <div className='cards-container'>
+          <div className='cards-container' key={characters.name}>
             <img className='imgCharacter' src={characters.cardImageURL} alt="image character"/>
             <div className='txt-container'>
               <h2>{characters.name}</h2>
@@ -27,6 +55,11 @@ export const Genshin = () => {
                 <br />
                 <span>{characters.description}</span> 
               </p>
+              <div>
+                <button type='button' onClick={() => handleClick(characters)}>
+                  Agregar a favoritos
+                </button>
+              </div>
             </div>
           </div>
         ))}
