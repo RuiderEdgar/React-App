@@ -1,20 +1,27 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import nightMode from "../assets/icons/nightMode.png";
 import lightMode from "../assets/icons/lightMode.png"
 import React from 'react'
+import ThemeContext from "../context/ThemeContext";
 
-export const DarkLightMode = (props) => {
-    
+export const DarkLightMode = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const {theme, updateTheme} = useContext(ThemeContext);
+
+  const handleClcik = () => {
+    setDarkMode(!darkMode)
+    theme === "lightMode" ? updateTheme("darkMode") : updateTheme("lightMode");
+  }
   return (
     <div className="DarkLightMode">
-        <button type="button" className="dark-toggle" onClick={()=>props.onClick()}>
-        {props.darkMode 
+        <button type="button" className="dark-toggle" onClick={handleClcik}>
+        {darkMode 
           ? <img className="iconDarkLightMode" src={lightMode}></img> 
           : <img className="iconDarkLightMode" src={nightMode} />
         }
         </button>
     </div>
-  )
+  );
 }
 
 export default DarkLightMode;
